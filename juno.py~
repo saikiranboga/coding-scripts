@@ -1,0 +1,30 @@
+MOD = 1000000007
+ 
+def powmod(a,p):
+    res = 1
+    while (p > 0):
+        if (p % 2 == 1):
+           res = (res * a) % MOD
+        p = p/2
+        a = (a * a) % MOD
+    return res
+ 
+def main():
+    p=[0]*200
+    q=[0]*200
+    a=[0]*2
+    b=[0]*2
+    c=[0]*2
+    m=[0]*2
+    for i in range(int(raw_input())):
+        v,n=map(int,raw_input().split())
+        p[0],p[1],a[0],b[0],c[0],m[0]=map(int,raw_input().split())
+        q[0],q[1],a[1],b[1],c[1],m[1]=map(int,raw_input().split())
+        ans=((p[0]*m[1]+q[0])*(p[1]*m[1]+q[1]))
+        for i in range(2,n):
+            p[i]=((a[0]*a[0]*p[i-1])+(b[0]*p[i-2])+c[0])%m[0]
+            q[i]=((a[1]*a[1]*q[i-1])+(b[1]*q[i-2])+c[1])%m[1]
+            ans*=(p[i]*m[1]+q[i])
+        print powmod(v,ans%(MOD-1))
+        
+main()

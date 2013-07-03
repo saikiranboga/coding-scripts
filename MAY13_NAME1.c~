@@ -1,0 +1,5 @@
+#include<stdio.h>
+int main(){
+  int t;
+  int parent_alph[26];
+}

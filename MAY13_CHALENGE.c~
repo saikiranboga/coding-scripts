@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(){
+  int T,N,H,i,score;
+  scanf("%d%d%d",&T,&N,&H);
+  while(T--){
+    for(i=0;i<N;i++){
+      printf("codechefchal\n");
+      fflush(stdout);
+    }
+    scanf("%d",&score);
+  }
+  return 0;
+}
